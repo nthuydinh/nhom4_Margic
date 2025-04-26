@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Foundation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: white;
+      color: #000;
+    }
+
+    .khoahoc {
+  width: 100%;
+  min-height: 92vh;
+  background-image: url('./Ảnh và video/fsm1.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+  .khoahoc-text {
+    position: relative;
+    color: white;
+    z-index: 2;
+    max-width: 1000px;
+    margin-left: 350px;
+    padding: 150px 110px 110px;
+    text-align: center;
+  }
+
+  .khoahoc-text h2 {
+    font-size: 50px;
+    font-weight: 600;
+    opacity: 0.9;
+    margin: 10px 0;
+  }
+
+  .khoahoc-text h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  .khoahoc-text p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 20px;
+    color: white;
+  }
+  @media (max-width: 600px) {
+    .khoahoc {
+    transform: scale(0.5);
+    transform-origin: top left;
+    width: 200%;
+    height: auto;
+  }
+}
+  .khoahoc-text {
+    margin-left: 350px;
+    padding: 75px 55px 55px;
+  }
+
+  .khoahoc-text h2{
+    font-size: 50px;
+  }
+
+  .khoahoc-text p {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .section-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 60px 20px;
+      background-color: #f5f9ff;
+    }
+
+    .info-box, .instructor-box {
+      background-color: #003e91;
+      color: white;
+      border-radius: 12px;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .info-box h3, .instructor-box h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      background-color: #0055bb;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .info-box ul {
+      text-align: left;
+      padding-left: 20px;
+      font-size: 15px;
+    }
+
+    .info-box ul li {
+      margin-bottom: 10px;
+    }
+
+    .instructor-box img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .instructor-box p {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      color: #003e91;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #dbe9ff;
+    }
+    @media (max-width: 600px) {
+  .section-info {
+    padding: 40px 15px;
+    gap: 15px;
+    margin-top:-70%;
+  }
+
+  .info-box, .instructor-box {
+    padding: 20px 15px;
+  }
+
+  .info-box h3, .instructor-box h3 {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .info-box ul {
+    font-size: 14px;
+  }
+
+  .instructor-box img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .instructor-box p {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+    .chuongtrinh {
+      background-image: url('./Ảnh và video/nền\ cth2.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center top;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      background-color: #cdd6f4;
+      color: #001f3f;
+      display: inline-block;
+      padding: 10px 40px;
+      border-radius: 24px;
+      margin-bottom: 45px;
+      font-size: 28px;
+    }
+
+    .grid1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .grid1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+    .box1 {
+      background-color: #dae5f5;
+      color: #000;
+      border: 4px dashed #000;
+      border-radius: 18px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    .box1 h3 {
+      background: linear-gradient(135deg, #011c4f, #0154c1);
+      color: white;
+      padding: 10px 0;
+      border-radius: 17px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    .box1 ul {
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+        .container {
+        max-width: 1200px;
+        margin: auto;
+        }
+
+        .pricing-wrapper {
+        position: relative;
+        text-align: center;
+        margin: 60px auto;
+        padding: 20px;
+        /* margin-bottom: 20px; */
+        }
+
+        .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('./Ảnh và video/Bản sao của Thầy trò đường tăng + Con cún.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+        z-index: 0;
+        }
+
+        .pricing-content {
+        position: relative;
+        z-index: 1;
+        padding: 40px 20px;
+        }
+
+      
+
+        .pricing-title {
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: bold;
+  color: #1c3b74;
+  background: #d6e4ff;
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 32px;
+  margin-bottom: 40px;
+}
+
+        .pricing-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+      
+
+.price-box {
+  background: #0c2d6b;
+  color: white;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+
+.price-box:hover {
+  transform: translateY(-4px);
+}
+
+        .price-box h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+        .price-box p {
+        font-size: 24px;
+        font-weight: bold;
+        }
+
+        .cta-button {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 12px 24px;
+        background-color: #fff;
+        color: #1c3b74;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+        background-color: #e0eaff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .centered-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.quiz-button {
+  background-color: #d9efff;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+
+
+.form-section {
+  background: linear-gradient(to top, #a7e6f3, #226ecc, #232a4a);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  color: aliceblue;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+form {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.notes {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.note-box {
+  background: #e6eefe;
+  color: #000;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.note-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  padding: 30px;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.close-btn {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+</style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="khoahoc">
+      <div class="khoahoc-text">
+        <h2>Khoá học</h2>
+        <h2>FULL-STACK MARKETING</h2>
+        <p>
+          Khóa học Full-stack Marketing mang đến kiến thức toàn diện về các khía cạnh của marketing, từ chiến lược truyền thống đến kỹ thuật số hiện đại. Học viên sẽ được trang bị kỹ năng phân tích dữ liệu, xây dựng chiến lược thương hiệu, và vận hành các chiến dịch trên nhiều nền tảng, giúp tối ưu hóa hiệu quả marketing trong mọi lĩnh vực kinh doanh
+        </p>
+      </div>
+    </div>
+    
+  <section class="section-info">
+    <div class="info-box">
+      <h3>Nội dung khóa học</h3>
+      <ul>
+        <li>Performance Marketing, Data Analytics, Automation</li>
+        <li>Thực hành chạy chiến dịch với ngân sách thật</li>
+      </ul>
+    </div>
+
+    <div class="instructor-box">
+      <h3>Giảng viên: Trần Văn B</h3>
+      <img src="./Ảnh và video/giangviennam.png" alt="Giảng viên">
+      <p>Digital Marketing Excellence 2019</p>
+      <p>Đào tạo hơn 2000 học viên</p>
+      <a href="#form" class="cta-button">ĐĂNG KÝ NGAY</a>
+    </div>
+
+    <div class="info-box">
+      <h3>Lịch học</h3>
+      <ul>
+        <li>4 buổi/tuần (Thứ 2-3-5-7)</li>
+        <li>Khai giảng: 30/1/2025</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <div class="chuongtrinh">
+    <h1>CHƯƠNG TRÌNH HỌC</h1>
+    <div class="grid1">
+      <!-- Hàng đầu tiên: Tháng 1, 2, 3 -->
+      <div class="box1">
+        <h3>THÁNG 1</h3>
+        <ul>
+          <li>Tổng quan Marketing 360° và chiến lược đa kênh.</li>
+          <li>Hiểu hành vi khách hàng và phễu Marketing.</li>
+        </ul>
+      </div>
+      <div class="box1">
+        <h3>THÁNG 2</h3>
+        <ul>
+          <li>SEO nâng cao: On-page, Off-page, và Technical SEO.</li>
+          <li>Google Ads và Facebook Ads chuyên sâu: Remarketing, A/B Testing.</li>
+          <li>Công cụ: Google Analytics, Google Tag Manager.</li>
+        </ul>
+      </div>
+      <div class="box1">
+        <h3>THÁNG 3</h3>
+        <ul>
+          <li>Đọc hiểu và phân tích dữ liệu từ các nền tảng.</li>
+          <li>Email Automation và CRM (Customer Relationship Management).</li>
+        </ul>
+      </div>
+  
+      <!-- Hàng thứ hai: Tháng 4, 5, 6 -->
+      <div class="box1">
+        <h3>THÁNG 4</h3>
+        <ul>
+          <li>Chiến lược nội dung video: TikTok, YouTube.</li>
+          <li>Xây dựng thương hiệu trên LinkedIn.</li>
+          <li>Sử dụng AI để tối ưu nội dung.</li>
+        </ul>
+      </div>
+      <div class="box1">
+        <h3>THÁNG 5</h3>
+        <ul>
+          <li>Chiến lược nội dung video: TikTok, YouTube.</li>
+          <li>Xây dựng thương hiệu trên LinkedIn.</li>
+          <li>Sử dụng AI để tối ưu nội dung.</li>
+        </ul>
+      </div>
+      <div class="box1">
+        <h3>THÁNG 6</h3>
+        <ul>
+          <li>Làm việc với ngân sách thật trên các chiến dịch thực tế.</li>
+          <li>Xây dựng và trình bày chiến lược Digital Marketing hoàn chỉnh.</li>
+          <li>Kết nối nhà tuyển dụng và định hướng nghề nghiệp.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+      <div class="pricing-wrapper">
+        <div class="background-overlay"></div>
+        <div class="pricing-content">
+          <h1 class="pricing-title">HỌC PHÍ FULL - STACK MARKETING</h1>
+          <div class="pricing-row">
+            <div class="price-box">
+              <h3>CHƯA ƯU ĐÃI</h3>
+              <p>22.000.000</p>
+            </div>
+            <div class="price-box">
+              <h3>COMBO</h3>
+              <p>17.600.000</p>
+            </div>
+            <div class="price-box">
+              <h3>EARLY-BIRD</h3>
+              <p>19.800.000</p>
+            </div>
+          </div>
+          <a href="./signup-official1.html"><button class="cta-button">Đăng kí ngay để nhận ưu đãi</button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="centered-text">
+        <p>Bạn chưa biết về trình độ của bản thân - Thử ngay <button class ="quiz-button">Miniquiz</button> sau </p>
+      </div>
+  
+
+  <div class="form-section" id="form">
+    <form>
+      <h3 style="text-align: center;">Form đăng kí nhận tư vấn khóa học</h3>
+      <input type="text" placeholder="Họ và tên" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Số điện thoại" required>
+      <input type="text" placeholder="Năm sinh">
+
+      <label>Khóa học bạn quan tâm:</label>
+      <select>
+        <option>Marketing Foundation</option>
+        <option>Full-stack Marketing</option>
+        <option>Cả hai khóa</option>
+      </select>
+
+      <textarea placeholder="Bạn mong muốn điều gì sau khóa học?"></textarea>
+
+      <label>Bạn muốn nhận tư vấn về khóa học qua đâu?</label>
+      <select>
+        <option>Số điện thoại</option>
+        <option>Email</option>
+      </select>
+
+      <input type="text" placeholder="Thời gian bạn có thể nhận tư vấn">
+
+      <button class="cta-button" type="submit" style="display: inline-block; margin-top: 1rem; padding: 12px 24px; background-color: #a3cfff; color: #1c3b74; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">Gửi đơn đăng kí</button>
+    </form>
+
+    <div class="notes">
+      <h3 style="text-align: center;">Lưu ý</h3>
+      <div class="note-box">
+          <h4>Lịch khai giảng</h4>
+        <div class="note-grid">
+          <div>
+            <strong style="color: #3e6a99;">Marketing Foundation</strong><br>
+            Lịch học: 3 buổi/tuần<br>
+            Khai giảng: 30/1/2025<br>
+            Hình thức: Offline
+          </div>
+          <div>
+            <strong style="color: #3e6a99;">Full-stack Foundation</strong><br>
+            Lịch học: 4 buổi/tuần<br>
+            Khai giảng: 30/1/2025<br>
+            Hình thức: Offline
+          </div>
+        </div>
+      </div>
+      <div class="note-box">
+        <h4>Đăng kí tư vấn</h4>
+        <p>Trong vòng 01 ngày làm việc, Team sẽ liên hệ hỗ trợ bạn.</p>
+      </div>
+      <div class="note-box">
+        <h4>Cam kết bảo mật thông tin</h4>
+        <p>Thông tin chỉ dùng trong nội bộ Marvic, không chia sẻ bên thứ ba.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="quizModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Miniquiz: Bạn hiểu gì về Marketing?</h2>
+    <p><strong>Câu 1:</strong> Marketing 4P gồm những gì?</p>
+    <form>
+      <label><input type="radio" name="q1"> Product, Price, Promotion, Place</label><br>
+      <label><input type="radio" name="q1"> Plan, People, Position, Profit</label><br>
+      <label><input type="radio" name="q1"> Price, Packaging, Process, Partnership</label><br>
+      <button type="button" onclick="alert('Cảm ơn bạn đã trả lời!')">Gửi câu trả lời</button>
+    </form>
+  </div>
+</div>
+
+  <div id="footer"></div>
+  <script>
+      fetch('header.html')
+          .then(res => res.text())
+          .then(data => {
+              document.getElementById('header').innerHTML = data;
+          });
+      fetch('footer.html')
+          .then(res => res.text())
+          .then(data => {
+              document.getElementById('footer').innerHTML = data;
+          });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const openBtn = document.getElementById("openQuiz");
+    const modal = document.getElementById("quizModal");
+    const closeBtn = document.querySelector(".close-btn");
+
+    // Mở popup khi bấm nút
+    openBtn.addEventListener("click", function () {
+      modal.style.display = "block";
+    });
+
+    // Đóng popup khi bấm dấu X
+    closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+
+    // Đóng popup khi bấm ra ngoài khung
+    window.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

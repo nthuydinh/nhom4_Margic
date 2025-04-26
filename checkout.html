@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+</head>
+<style>
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .course-list {
+    flex: 3;
+  }
+
+  .course-item {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 800px; 
+  }
+  .course-item img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-right: 20px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  .course-info {
+    flex: 2;
+  }
+
+  .course-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .course-info p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .price {
+    font-weight: bold;
+    color: #005eb8;
+  }
+
+  .quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .quantity-control button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #d3e2fc;
+    color: #0f2767;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .quantity-control button:hover {
+    background: #a4c6ff;
+  }
+
+  .quantity-control span {
+    font-size: 16px;
+  }
+
+  .course-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tim-hieu-them {
+    padding: 10px 20px;
+    background: #003c7a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .remove-item {
+    padding: 10px 20px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .remove-item:hover {
+    background: #cc0000;
+  }
+
+  .cart-summary {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-left: 20px;
+  }
+
+  .cart-summary h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cart-summary p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .cart-summary hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+  }
+
+  .btn-pay {
+    width: 100%;
+    padding: 12px;
+    background: #005eb8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .btn-pay:hover {
+    background: #003c7a;
+  }
+
+  .btn-select-all {
+    width: 100%;
+    padding: 12px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .btn-select-all:hover {
+    background: #cc0000;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .main-content {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .course-list {
+      flex: none;
+      width: 100%;
+    }
+
+    .course-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 15px;
+      max-width: 100%;
+    }
+
+    .course-item img {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 15px;
+      padding: 5px;
+    }
+
+    .course-info {
+      width: 100%;
+    }
+
+    .course-info h3 {
+      font-size: 18px;
+    }
+
+    .course-info p {
+      font-size: 12px;
+    }
+
+    .quantity-control button {
+      width: 35px;
+      height: 35px;
+      font-size: 16px;
+    }
+
+    .quantity-control span {
+      font-size: 14px;
+    }
+
+    .course-actions {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .tim-hieu-them, .remove-item {
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+
+    .cart-summary {
+      flex: none;
+      width: 100%;
+      margin-left: 0;
+      margin-top: 20px;
+      padding: 15px;
+    }
+
+    .cart-summary h3 {
+      font-size: 18px;
+    }
+
+    .cart-summary p {
+      font-size: 14px;
+    }
+
+    .btn-pay, .btn-select-all {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+</style>
+<body>
+  <div id="header"></div>
+  <div class="main-content">
+    <div class="course-list" id="cart-items"></div>
+
+    <!-- Thông tin đơn hàng -->
+    <div class="cart-summary">
+      <h3>Thông tin đơn hàng</h3>
+      <p>Tạm tính: <span id="subtotal">0</span> VNĐ</p>
+      <hr />
+      <p><strong>Tổng tiền: <span id="total">0</span> VNĐ</strong></p>
+      <button class="btn-pay">THANH TOÁN</button>
+      <button class="btn-select-all" onclick="selectAll()">Chọn Tất Cả</button>
+    </div>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    const subtotal = document.getElementById('subtotal');
+    const total = document.getElementById('total');
+
+    function updateCartDisplay() {
+      const cartCount = document.querySelector('.cart-count');
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+      if (cartCount) {
+        cartCount.textContent = totalItems;
+        cartCount.classList.toggle('active', totalItems > 0);
+      }
+
+     
+    
+    }
+
+    function renderCart() {
+      cartItemsContainer.innerHTML = '';
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Giỏ hàng trống.</p>';
+        updateTotal();
+        updateCartDisplay();
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('course-item');
+        const rating = item.name === 'Marketing Foundation' ? '(233)' : '(876)';
+        const description = item.name === 'Marketing Foundation' 
+          ? 'Khóa học giúp bạn xây dựng nền tảng vững chắc để bước vào thế giới tiếp thị hiện đại – nội chiến lược, sáng tạo và dữ liệu gắn nhậu.' 
+          : 'Khóa học nâng cao, cung cấp chiến lược, kỹ năng toàn diện, sáng tạo làm chủ chiến dịch và giải đoạn hành trình khách hàng.';
+        itemElement.innerHTML = `
+          <input type="checkbox" class="checkbox" data-price="${item.price * item.quantity}" data-index="${index}" ${item.selected ? 'checked' : ''}>
+          <img src="${item.image}" alt="${item.name}">
+          <div class="course-info">
+            <h3>${item.name}</h3>
+            <p>${rating} ⭐⭐⭐⭐⭐</p>
+            <p>${description}</p>
+            <p class="price">${(item.price * item.quantity).toLocaleString()} VNĐ</p>
+            <div class="quantity-control">
+              <button onclick="updateQuantity(${index}, -1)">-</button>
+              <span>${item.quantity}</span>
+              <button onclick="updateQuantity(${index}, 1)">+</button>
+            </div>
+          </div>
+          <div class="course-actions">
+            <button class="tim-hieu-them">Tìm hiểu thêm</button>
+            <button class="remove-item" data-index="${index}">Xóa</button>
+          </div>
+        `;
+        cartItemsContainer.appendChild(itemElement);
+      });
+
+      document.querySelectorAll('.remove-item').forEach(button => {
+        button.addEventListener('click', () => {
+          const index = parseInt(button.dataset.index);
+          removeItem(index);
+        });
+      });
+
+      document.querySelectorAll('.checkbox').forEach(cb => {
+        cb.addEventListener('change', () => {
+          const index = parseInt(cb.dataset.index);
+          cart[index].selected = cb.checked;
+          localStorage.setItem('cart', JSON.stringify(cart));
+          updateTotal();
+        });
+      });
+
+      updateTotal();
+      updateCartDisplay();
+    }
+
+    function updateQuantity(index, change) {
+      if (cart[index].quantity + change >= 1) {
+        cart[index].quantity += change;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+      }
+    }
+
+    function removeItem(index) {
+      try {
+        if (index >= 0 && index < cart.length) {
+          cart.splice(index, 1);
+          localStorage.setItem('cart', JSON.stringify(cart));
+          renderCart();
+          alert('Khóa học đã được xóa khỏi giỏ hàng!');
+        } else {
+          console.error('Invalid cart index:', index);
+        }
+      } catch (error) {
+        console.error('Error removing item:', error);
+      }
+    }
+
+    function selectAll() {
+      cart.forEach(item => item.selected = true);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function updateTotal() {
+      let sum = 0;
+      cart.forEach(item => {
+        if (item.selected) {
+          sum += item.price * item.quantity;
+        }
+      });
+      subtotal.textContent = sum.toLocaleString();
+      total.textContent = sum.toLocaleString();
+    }
+
+    document.querySelector('.btn-pay').addEventListener('click', () => {
+      if (cart.some(item => item.selected)) {
+        alert('Tiến hành thanh toán!');
+      } else {
+        alert('Vui lòng chọn ít nhất một khóa học để thanh toán.');
+      }
+    });
+
+    renderCart();
+</script>
+
+<script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+        updateCartDisplay();
+      });
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+
+  <div id="footer"></div>
+</body>
+</html>

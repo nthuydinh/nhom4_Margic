@@ -1,0 +1,674 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giới Thiệu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Tất cả */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body {
+  background-color: #ffffff;
+  color: #0f2767;
+  animation: fadein 1s ease;
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide 1 */
+.five-year-journey {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+}
+.content {
+  max-width: 45%;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.logo img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+h1 {
+  font-size: 45px;
+  font-weight: 800;
+  margin: 0 0 30px 0;
+  color: #000;
+}
+.event-date {
+  background-color: #d0e3f2;
+  border: 2px solid #000;
+  color: #1b1b1b;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.event-date:hover {
+  background-color: #bcd6ec;
+}
+.image-container img {
+  width: 100%;
+  padding: 10px;
+  max-width: 460px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive slide 1 */
+@media (max-width: 600px) {
+  .five-year-journey {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .logo {
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .event-date {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .image-container img {
+    max-width: 80%;
+    padding: 5px 0;
+  }
+}
+/* Slide 2 */
+.intro-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background: linear-gradient(180deg, #00101b, #126fdd);
+  color: white;
+}
+.intro-left, .intro-right {
+  flex: 1;
+  padding: 40px;
+}
+.intro-left img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.logo-title img {
+  width: 40px;
+  height: 40px;
+}
+.logo-title h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+.intro-right ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+  .intro-right li {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+/* Responsive slide 2 */
+@media (max-width: 600px) {
+  .intro-section {
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; 
+    box-sizing: border-box;
+  }
+
+  .intro-left, .intro-right {
+    padding: 16px 0;
+  }
+
+  .logo-title {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .logo-title img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-title h2 {
+    font-size: 20px;
+  }
+
+  .intro-right li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  .intro-left img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
+
+/* Slide 3 */
+.main-section {
+  background: linear-gradient(180deg, #00101b, #126fdd);
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin-bottom: 60px;
+}
+.main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px #60a5fa, 0 0 12px #3b82f6, 0 0 20px #2563eb;
+  color: #ffffff;
+  text-align: center;
+}
+.main-subtitle {
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  transition: transform 0.5s, box-shadow 0.5s;
+  text-align: center;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.7);
+}
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 4px solid #3b82f6;
+  margin-bottom: 1rem;
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 8px #60a5fa, 0 0 12px #3b82f6, 0 0 20px #2563eb;
+}
+.highlight-text {
+  margin-top: 0.5rem;
+  color: #93c5fd;
+  font-weight: 700;
+}
+.card-desc {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+.cta-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  padding: 10px;
+}
+.cta-button {
+  display: inline-block;
+  background-color: #2563eb;
+  padding: 0.75rem 2rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px #60a5fa, 0 0 12px #3b82f6, 0 0 20px #2563eb;
+}
+
+.cta-button:hover {
+  background-color: #1e40af;
+}
+@media (max-width: 600px) {
+  .main-section {
+    padding: 20px;
+  }
+
+  .main-title {
+    font-size: 1.75rem;
+    text-shadow: 0 0 4px #60a5fa, 0 0 6px #3b82f6;
+  }
+
+  .main-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    padding: 0 10px;
+  }
+
+  .card-container {
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+  }
+
+  .highlight-text {
+    font-size: 0.9rem;
+  }
+  .avatar {
+    width: 90px;
+    height: 95px;
+    border-width: 3px;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.65rem 1.5rem;
+  }
+}
+
+  /*.......Slide 4 - 5 ......*/
+
+.slide0{
+  background: white;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin-bottom: 60px;
+}
+.slide-title {
+  color: #1e3a8a;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.slide1-content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.slide1-content .text {
+  flex: 1;
+  min-width: 280px;
+}
+.slide1-content .text p {
+  font-size: 16px;
+  color: #333;
+  text-align: justify;
+}
+.slide1-content .buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.slide1-content .buttons button {
+  display: block;
+  margin-bottom: 15px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  background: white;
+  border: 2px solid #1e3a8a;
+  color: #1e3a8a;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+}
+.slide1-content .buttons button:hover {
+  background-color: #1e3a8a;
+  color: white;
+}
+.slide1-content .images {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.slide1-content .images img {
+  width: 45%;
+  border-radius: 10px;
+}
+.slide-container {
+  max-width: 1300px;
+  margin: 40px auto;
+}
+.slide {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin-bottom: 60px;
+}
+.partners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  align-items: center;
+  justify-items: center;
+}
+.partners img {
+  max-width: 120px;
+  max-height: 80px;
+  object-fit: contain;
+}
+@media (max-width: 600px) {
+  .slide0 {
+    padding: 20px;
+  }
+
+  .slide1-content {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .slide1-content .text p {
+    font-size: 14px;
+  }
+
+  .slide1-content .buttons button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .slide1-content .images {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .slide1-content .images img {
+    width: 48%;
+  }
+
+  .slide-title {
+    font-size: 22px;
+  }
+
+  .slide-container {
+    padding: 0 15px;
+  }
+
+  .slide {
+    padding: 20px;
+  }
+
+  .partners {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .partners img {
+    max-width: 80px;
+    max-height: 50px;
+  }
+}
+
+   /* VIDEO BACKGROUND */
+   .video-background {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .video-background video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      object-fit: cover;
+      filter: brightness(60%);
+    }
+
+    .video-background .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      top: 40%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .video-background h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .video-background p {
+      font-size: 20px;
+    }
+
+  </style>
+</head>
+<body>
+      <!-- Header -->
+      <div id="header"></div>
+
+<!-- -----------------------Slide 1------------------------------>
+<section class="five-year-journey">
+  <div class="content">
+    <div class="logo">
+      <img src="./Ảnh và video/magic-wand-and-hat-svgrepo-com.svg" alt="Margic logo">
+      <span>Margic</span>
+    </div>
+    <h1>Hành trình 5<br>năm cùng<br>Margic</h1>
+    <button class="event-date">22 THÁNG 12 NĂM 2025</button>
+  </div>
+  <div class="image-container">
+    <img src="./Ảnh và video/Ảnh nhóm3.jpg" alt="Ảnh tập thể Margic 1">
+    <img src="./Ảnh và video/Ảnh nhóm2.jpg" alt="Ảnh tập thể Margic 2">
+  </div>
+</section>
+<!-- ---------------------Slide 2-------------------------------->
+ <section class="intro-section">
+  <div class="intro-left">
+    <img src="./Ảnh và video/Ảnh nhóm3.jpg" alt="Ảnh đội ngũ Margic">
+  </div>
+  <div class="intro-right">
+    <div class="logo-title">
+      <img src="./Ảnh và video/magic-wand-and-hat-svgrepo-com.svg" alt="Margic logo">
+      <h2>Margic</h2>
+    </div>
+    <ul>
+      <li>
+        Trung tâm Margic ra đời với sứ mệnh tiên phong trong việc đào tạo các kiến thức về marketing tại Việt Nam. 
+        Được thành lập vào năm 2018, trung tâm chỉ là một dự án nhỏ với mong muốn mang đến nền tảng học tập thực chiến, 
+        đáp ứng nhu cầu ngày càng lớn về các kiến thức, kĩ năng liên quan đến marketing trong kỷ nguyên công nghệ.
+      </li>
+      <li>
+        Những ngày đầu, Margic hoạt động với đội ngũ chỉ gồm 5 giảng viên và một cơ sở đào tạo nhỏ tại Hà Nội. 
+        Với lòng đam mê và sự kiên trì, đội ngũ đã không ngừng nghiên cứu và xây dựng các chương trình học phù hợp 
+        với thực tiễn thị trường.
+      </li>
+      <li>
+        Năm 2020 đánh dấu bước ngoặt lớn khi trung tâm Margic mở rộng quy mô đào tạo và chính thức ra mắt khoá học 
+        chuyên sâu về Marketing, mở rộng đa dạng đối tượng học viên. Song song với đó, trung tâm cũng đầu tư mạnh 
+        mẽ vào cơ sở vật chất, ứng dụng công nghệ trực tuyến, và ký kết hợp tác với nhiều đối tác chiến lược 
+        uy tín như Google và Meta.
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- ---------------------Slide 3-------------------------------->
+<section class="main-section">
+  <h2 class="main-title">Đội Ngũ Chuyên Gia & Giảng Viên</h2>
+  <p class="main-subtitle">
+      Chúng tôi tự hào quy tụ những chuyên gia hàng đầu trong lĩnh vực Marketing, sẵn sàng đồng hành và chia sẻ kiến thức thực chiến với bạn.
+  </p>
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+        <img class="avatar" src="./Ảnh và video/Ảnh người 1.jpg" alt="Giảng viên" />
+        <h3 class="card-title">Lê Thị Mai Linh</h3>
+        <p class="highlight-text">Content Manager tại Unicharm</p>
+        <p class="card-desc">10+ năm kinh nghiệm triển khai các chiến dịch Marketing đa kênh, từng làm việc tại các tập đoàn lớn.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <img class="avatar" src="./Ảnh và video/Ảnh người 2.jpg" alt="Giảng viên 2" />
+        <h3 class="card-title">Phan Văn Quân</h3>
+        <p class="highlight-text">Marketing Director tại Margic</p>
+        <p class="card-desc">Dẫn dắt đội ngũ Marketing với hơn 15 năm kinh nghiệm, xây dựng chiến lược thương hiệu và tăng trưởng doanh thu vượt bậc cho các doanh nghiệp đa lĩnh vực.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <img class="avatar" src="./Ảnh và video/Ảnh người 3.webp" alt="Giảng viên 3" />
+        <h3 class="card-title">Hà Bích Trân</h3>
+        <p class="highlight-text">Head of Marketing tại Vietcombank</p>
+        <p class="card-desc">Chuyên gia hoạch định chiến lược Marketing tổng thể, dẫn dắt các chiến dịch quảng bá thương hiệu ngân hàng tới hàng triệu khách hàng trên toàn quốc.</p>
+    </div>
+  </div>
+  <!-- Button -->
+  <div class="cta-container">
+      <a href="./careerspage.html" class="cta-button">Tham gia cùng chúng tôi</a>
+  </div>
+</section>
+<!-- ---------------------Slide 4-------------------------------->
+<div class="slide0">
+  <div class="slide1-content">
+    <div class="images">
+      <img src="./Ảnh và video/Ảnh nhóm 1.jpg" alt="Học viên 1" />
+      <img src="./Ảnh và video/Ảnh nhóm2.jpg" alt="Học viên 2" />
+      <img src="./Ảnh và video/Ảnh nhóm3.jpg" alt="Học viên 3" />
+      <img src="./Ảnh và video/Ảnh nhóm 1.jpg" alt="Học viên 4" />
+    </div>
+    <div class="text">
+      <div class="slide-title">HỌC VIÊN CỦA CHÚNG TÔI</div>
+      <p>Với hơn 5.000 học viên đã đồng hành trong suốt 5 năm qua, Margic tự hào khi đã xây dựng nên một cộng đồng cựu học viên ngày càng lớn mạnh, quy tụ những cá nhân tài năng đến từ nhiều ngành nghề và lĩnh vực đa dạng. Trong suốt hành trình ấy, chúng tôi không chỉ là người hướng dẫn, mà còn là người chứng kiến những bước tiến vượt bậc, những câu chuyện truyền cảm hứng và hành trình vươn xa đầy nỗ lực của các học viên. Hãy cùng chúng tôi nhìn lại những cột mốc đáng tự hào và các thành tựu nổi bật mà cộng đồng học viên Margic đã chinh phục – những con số biết nói chính là minh chứng rõ ràng nhất cho hành trình phát triển không ngừng này!</p>
+      <div class="buttons">
+        <button>THÀNH TỰU HỌC VIÊN</button>
+        <button>CHIA SẺ CỦA HỌC VIÊN</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="slide-container">
+<!-- ---------------------Slide 5-------------------------------->
+<div class="slide">
+  <div class="slide-title">CÁC ĐỐI TÁC CHIẾN LƯỢC CỦA MARGIC</div>
+  <div class="partners">
+    <img src="./Ảnh và video/unilever.png" alt="Unilever" />
+    <img src="./Ảnh và video/dentsu.jpg" alt="Dentsu Creative" />
+    <img src="./Ảnh và video/vinamilk.png" alt="Vinamilk" />
+    <img src="./Ảnh và video/facebook-logo copy.png" alt="Facebook" />
+    <img src="./Ảnh và video/marico.png" alt="Marico" />
+    <img src="./Ảnh và video/p&g.jpg" alt="P&G" />
+    <img src="./Ảnh và video/ogilvy.jpg" alt="Ogilvy" />
+    <img src="./Ảnh và video/nesle.png" alt="Nestlé" />
+    <img src="./Ảnh và video/pnj.jpg" alt="PNJ" />
+    <img src="./Ảnh và video/aeon mall.png" alt="AEON Mall" />
+    <img src="./Ảnh và video/vnpay.jpg" alt="VNPay" />
+    <img src="./Ảnh và video/sony.png" alt="Sony" />
+    <img src="./Ảnh và video/mbbank.jpg" alt="MB Bank" />
+    <img src="./Ảnh và video/unicharm.png" alt="Unicharm" />
+    <img src="./Ảnh và video/invisalign.png" alt="Invisalign" />
+    <img src="./Ảnh và video/huyndai.jpg" alt="Hyundai" />
+    <img src="./Ảnh và video/viettel.jpg" alt="Viettel" />
+  </div>
+</div>
+</div>
+
+  <!-- Video background -->
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="./Ảnh và video/watermarked_preview.mp4" type="video/mp4">
+    </video>
+    <div class="content" style="color: #ffffff;">
+      <h1>Margic - Học thực chiến</h1>
+      <p>Bứt phá tư duy - Dẫn đầu xu hướng</p>
+    </div>
+  </div>
+
+
+ <!-- Footer -->
+ <div id="footer"></div>
+
+ <script>
+   fetch('header.html')
+     .then(res => res.text())
+     .then(data => {
+       document.getElementById('header').innerHTML = data;
+     });
+
+   fetch('footer.html')
+     .then(res => res.text())
+     .then(data => {
+       document.getElementById('footer').innerHTML = data;
+     });
+ </script>  

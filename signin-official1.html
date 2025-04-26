@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng nhập</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .signin {
+      background: linear-gradient(to right, #ccefff, #e6f7ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 1120px;
+      height: 560px;
+      display: flex;
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 48px rgba(0, 102, 153, 0.3);
+    }
+
+    .left {
+      flex: 1;
+      background: linear-gradient(to top, #e0f7ff, #b3e0ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .left img:hover {
+      transform: scale(1.05);
+    }
+
+    .right {
+      flex: 1;
+      background-color: #f0fcff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 48px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .right h2 {
+      color: #006699;
+      margin-bottom: 9.6px;
+      font-size: 28.8px;
+    }
+
+    .right p {
+      margin-bottom: 24px;
+      color: #3399cc;
+      font-size: 14.4px;
+    }
+
+    .form-group {
+      width: 100%;
+      margin-bottom: 17.6px;
+      position: relative;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #99ccff;
+      border-radius: 9.6px;
+      font-size: 12.8px;
+      transition: 0.3s ease;
+      background-color: #ffffff;
+    }
+
+    .form-group input:focus {
+      border-color: #004599;
+      box-shadow: 0 0 8px rgba(0, 102, 153, 0.3);
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 12.8px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 14.4px;
+      color: #005799;
+    }
+
+    .form-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .signin-btn {
+      background-color: #0077cc;
+      color: white;
+      padding: 11px 26px;
+      border: none;
+      border-radius: 32px;
+      font-size: 14.4px;
+      margin-top: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+      box-shadow: 0 6.4px 16px rgba(0, 82, 153, 0.3);
+    }
+
+    .signin-btn:hover {
+      background-color: #004daa;
+      transform: translateY(-1.6px);
+    }
+    .link {
+      margin-top: 14.4px;
+      font-size: 12px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .link a {
+    color: #0047aa;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .link a:hover {
+    color: #002766;
+    text-decoration: underline;
+  }
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 24px 0 16px;
+      width: 100%;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 0.8px;
+      background: #ccc;
+    }
+
+    .divider span {
+      margin: 0 11.2px;
+      color: #888;
+      font-size: 12.8px;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .social-buttons img {
+      width: 96px;
+      height: 56px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 9.6px;
+      box-shadow: 0 3.2px 9.6px rgba(0, 102, 153, 0.1);
+    }
+
+    .social-buttons img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6.4px 16px rgba(0, 102, 153, 0.3);
+    }
+
+    @media screen and (max-width: 600px) {
+      .left {
+        display: none;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <div class="signin">
+
+  <div class="container">
+    <div class="left">
+      <img src="./Ảnh và video/anh signup copy.jpg" alt="Hình ảnh" />
+    </div>
+    <div class="right">
+      <h2>Đăng nhập</h2>
+      <p>Chào mừng bạn quay lại!</p>
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="Email hoặc Số điện thoại" required />
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" placeholder="Mật khẩu" required />
+          <span class="toggle-password" onclick="togglePassword()">@</span>
+        </div>
+
+        <div class="form-footer">
+          <button type="submit" class="signin-btn">Đăng nhập</button>
+
+          <div class="link">
+            Quên mật khẩu? <a href="#">Lấy lại mật khẩu</a>
+          </div>
+          <div class="link">
+            Chưa có tài khoản? <a href="./signup-official1.html">Đăng ký ngay</a>
+          </div>
+
+          <div class="divider"><span>Hoặc</span></div>
+
+          <div class="social-buttons">
+            <img src="./Ảnh và video/google-logo copy 3.png" alt="Google" />
+            <img src="./Ảnh và video/facebook-logo copy.png" alt="Facebook" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <script>
+    function togglePassword() {
+      const input = document.getElementById("password");
+      const type = input.getAttribute("type") === "password" ? "text" : "password";
+      input.setAttribute("type", type);
+    }
+  </script>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>  
+</body>
+</html>

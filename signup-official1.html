@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng ký</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .signin {
+      background: linear-gradient(to right, #ccefff, #e6f7ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 1200px;
+      height: 580px;
+      display: flex;
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 48px rgba(0, 79, 153, 0.3);
+    }
+
+    .left {
+      flex: 1;
+      background: linear-gradient(to top, #e0f7ff, #b3e0ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .left img:hover {
+      transform: scale(1.05);
+    }
+
+    .right {
+      flex: 1;
+      background-color: #f0fcff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 48px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .right h2 {
+      color: #003899;
+      margin-bottom: 10px;
+      font-size: 29px;
+      text-align: center;
+    }
+
+    .right p {
+      margin-bottom: 24px;
+      color: #3382cc;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1px solid #99ccff;
+      border-radius: 9.6px;
+      font-size: 13px;
+      background-color: #ffffff;
+      transition: 0.3s ease;
+    }
+
+    .form-group input:focus {
+      border-color: #004d99;
+      box-shadow: 0 0 8px rgba(0, 71, 153, 0.3);
+    }
+
+    .form-row {
+      display: flex;
+      gap: 13px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    .gender-options {
+      display: flex;
+      gap: 14px;
+      font-size: 11.2px;
+      margin-bottom: 18px;
+      color: #003399;
+    }
+
+    .signup-btn {
+      background-color: #005ccc;
+      color: white;
+      padding: 11px 26px;
+      border: none;
+      border-radius: 32px;
+      font-size: 14px;
+      margin-top: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 16px rgba(0, 71, 153, 0.3);
+      width: 100%;
+    }
+
+    .signup-btn:hover {
+      background-color: #002daa;
+      transform: translateY(-1.6px);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 24px 0 16px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 0.8px;
+      background: #ccc;
+    }
+
+    .divider span {
+      margin: 0 11px;
+      color: #888;
+      font-size: 13px;
+    }
+    .login-link {
+    margin-top: 16px;
+    font-size: 13px;
+    text-align: center;
+    color: #001299;
+  }
+
+  .login-link a {
+    color: #001caa;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .login-link a:hover {
+    color: #002966;
+    text-decoration: underline;
+  }
+    .social-buttons {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .social-buttons img {
+      width: 96px;
+      height: 56px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 9.6px;
+      box-shadow: 0 3.2px 9.6px rgba(0, 102, 153, 0.1);
+    }
+
+    .social-buttons img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6.4px 16px rgba(0, 102, 153, 0.3);
+    }
+
+    @media screen and (max-width: 600px) {
+      .left {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="signin">
+
+  <div class="container">
+    <!-- BÊN TRÁI -->
+    <div class="left">
+      <img src="./Ảnh và video/anh signup copy.jpg" alt="Ảnh nền">
+    </div>
+
+    <!-- BÊN PHẢI -->
+    <div class="right">
+      <h2>Đăng ký</h2>
+      <p>Chào mừng bạn đến với khoá học!</p>
+
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="Họ và tên" required />
+        </div>
+
+        <div class="gender-options">
+          <label><input type="radio" name="gender" value="Nam" required /> Nam</label>
+          <label><input type="radio" name="gender" value="Nữ" required /> Nữ</label>
+          <label><input type="radio" name="gender" value="Khác" required /> Khác</label>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <input type="date" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Số điện thoại" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="email" placeholder="Email" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <input type="password" placeholder="Mật khẩu" required />
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Nhập lại mật khẩu" required />
+          </div>
+        </div>
+
+        <button type="submit" class="signup-btn">Đăng ký</button>
+        <div class="login-link">
+            Đã có tài khoản?
+            <a href="./signin-official1.html" onclick="redirectToLogin()">Đăng nhập</a>
+          </div>
+
+        <div class="divider"><span>Hoặc</span></div>
+
+        <div class="social-buttons">
+          <img src="./Ảnh và video/google-logo copy 3.png" alt="Google">
+          <img src="./Ảnh và video/facebook-logo copy.png" alt="Facebook">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  <script>
+    function redirectToLogin() {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>  
+</body>
+</html>

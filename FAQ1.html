@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.faq-header {
+  background: url('./Ảnh và video/Background\ FAQs.png') no-repeat center;
+  background-size: cover;
+  padding: 60px;
+  text-align: center;
+  color: #fff;
+}
+
+.faq-header h1 {
+  font-size: 64px;
+  font-weight: 900;
+}
+
+.faq-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.faq-tabs .tab {
+  padding: 12px 20px;
+  font-weight: bold;
+  border: none;
+  background-color: #004aad;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.faq-tabs .tab:hover,
+.faq-tabs .tab.active {
+  background-color: #333;
+}
+.faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  border-top: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.toggle-icon {
+  font-size: 20px;
+  transition: transform 0.3s;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  font-size: 16px;
+  color: #333;
+}
+
+.faq-answer.open {
+  padding-top: 10px;
+}
+
+  </style>
+</head>
+<body>
+
+    
+  <div id="header"></div>
+
+  <header class="faq-header">
+    <h1>FAQs</h1>
+  </header>
+
+  <nav class="faq-tabs">
+    <button class="tab" onclick="scrollToSection('khoahoc')">Khóa học</button>
+    <button class="tab" onclick="scrollToSection('giaca')">Giá cả</button>
+    <button class="tab" onclick="scrollToSection('hoantien')">Hoàn tiền</button>
+    <button class="tab" onclick="scrollToSection('taikhoan')">Tài khoản</button>
+    <button class="tab" onclick="scrollToSection('vandetruycap')">Vấn đề truy cập</button>
+    <button class="tab" onclick="scrollToSection('giangvien')">Giảng viên</button>
+    <button class="tab" onclick="scrollToSection('chinhsach')">Chính sách</button>
+  </nav>
+  <div class="faq-section">
+    <h2 id="khoahoc">KHÓA HỌC</h2>
+  
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Khóa học bao gồm những gì?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Khóa học bao gồm video bài giảng, bài tập thực hành, tài liệu PDF, và hỗ trợ trực tiếp từ giảng viên.</p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Có được cấp chứng chỉ sau khóa học không?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Sau khi hoàn thành khóa học và vượt qua bài kiểm tra cuối cùng, bạn sẽ được cấp chứng chỉ hoàn thành.</p>
+      </div>
+    </div>
+    <h2 id="giaca">GIÁ CẢ</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Khóa học có giá bao nhiêu?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Giá mỗi khóa học sẽ khác nhau tùy vào nội dung và độ dài. Bạn có thể xem giá cụ thể tại trang chi tiết của từng khóa học.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Có giảm giá hoặc khuyến mãi không?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Chúng tôi thường xuyên có các chương trình ưu đãi theo mùa. Hãy đăng ký nhận email để không bỏ lỡ!</p>
+      </div>
+    </div>
+    
+    <h2 id="hoantien">HOÀN TIỀN</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Tôi có thể yêu cầu hoàn tiền không?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Có. Bạn có thể yêu cầu hoàn tiền trong vòng 7 ngày kể từ khi mua nếu chưa học quá 20% nội dung khóa học.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Làm thế nào để yêu cầu hoàn tiền?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Vui lòng liên hệ với đội ngũ hỗ trợ của chúng tôi qua email hoặc biểu mẫu liên hệ kèm thông tin đơn hàng.</p>
+      </div>
+    </div>
+
+    <h2 id="taikhoan">TÀI KHOẢN</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Làm sao để tạo tài khoản?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Bạn chỉ cần nhập email và mật khẩu để đăng ký. Ngoài ra, có thể đăng ký nhanh qua Google hoặc Facebook.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Tôi quên mật khẩu, phải làm gì?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Bạn có thể bấm vào “Quên mật khẩu” tại trang đăng nhập để thiết lập lại mật khẩu qua email.</p>
+      </div>
+    </div>
+
+    <h2 id="vandetruycap">VẤN ĐỀ TRUY CẬP</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Tôi không truy cập được vào khóa học đã mua?
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Hãy chắc chắn rằng bạn đã đăng nhập đúng tài khoản. Nếu vẫn không truy cập được, vui lòng liên hệ bộ phận hỗ trợ.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Website bị lỗi hoặc không hiển thị bài học?
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Vui lòng thử tải lại trang, xóa bộ nhớ cache, hoặc sử dụng trình duyệt khác. Nếu lỗi vẫn tiếp diễn, hãy gửi yêu cầu hỗ trợ.</p>
+      </div>
+    </div>
+
+    <h2 id="giangvien">GIẢNG VIÊN</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Ai là người giảng dạy khóa học?
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Tất cả giảng viên đều là chuyên gia trong lĩnh vực của họ, có nhiều năm kinh nghiệm giảng dạy và thực tiễn.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Tôi có thể tương tác với giảng viên không?
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Một số khóa học cho phép đặt câu hỏi trực tiếp qua phần thảo luận hoặc Q&A.</p>
+      </div>
+    </div>
+
+    <h2 id="chinhsach">CHÍNH SÁCH</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Khóa học có bản quyền không?
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Có. Tất cả nội dung khóa học đều được bảo vệ bản quyền. Vui lòng không sao chép hoặc chia sẻ mà không có sự cho phép.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Tôi có thể chia sẻ tài khoản với người khác không?
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Không. Việc chia sẻ tài khoản là vi phạm chính sách sử dụng. Hệ thống sẽ tự động phát hiện và khóa tài khoản nếu có dấu hiệu bất thường.</p>
+      </div>
+    </div>
+  </div>
+
+        <!-- Footer -->
+        <div id="footer"></div>
+
+        <script>
+          const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+  const icon = item.querySelector('.toggle-icon');
+
+  question.addEventListener('click', () => {
+    const isOpen = answer.classList.contains('open');
+    
+
+    faqItems.forEach(i => {
+      i.querySelector('.faq-answer').style.maxHeight = null;
+      i.querySelector('.faq-answer').classList.remove('open');
+      i.querySelector('.toggle-icon').textContent = '+';
+    });
+
+
+    if (!isOpen) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      answer.classList.add('open');
+      icon.textContent = '−'; 
+    }
+  });
+});
+
+function scrollToSection(id) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+        </script>
+
+        <script>
+          fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+              document.getElementById('header').innerHTML = data;
+            });
+      
+          fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+              document.getElementById('footer').innerHTML = data;
+            });
+        </script> 
+</body>
+</html>
